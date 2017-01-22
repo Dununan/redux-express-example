@@ -17,6 +17,14 @@
   ],
   "author": "Dununan (https://github.com/Dununan)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dununan/redux-express-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dununan/redux-express-example/issues"
+  },
+  "homepage": "https://github.com/Dununan/redux-express-example",
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
