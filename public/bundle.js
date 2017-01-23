@@ -10755,7 +10755,7 @@ var Header = function Header(_ref) {
                     null,
                     _react2.default.createElement(
                         "a",
-                        null,
+                        { href: "https://github.com/Dununan/redux-express-example", target: "blank" },
                         "Fork me on GitHub"
                     )
                 )

@@ -5,7 +5,11 @@ const Header = ({title}) => (
         <div className="nav-wrapper container">
             <a className="brand-logo">{title}</a>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li><a >Fork me on GitHub</a></li>
+                <li>
+                    <a href="https://github.com/Dununan/redux-express-example" target="blank" >
+                        Fork me on GitHub
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
