@@ -1,11 +1,13 @@
 import {combineReducers, createStore, applyMiddleware} from 'redux'
-import dataStore from './reducers/data'
-import stateStore from './reducers/state'
+import usersStore from './users'
+import stateStore from './state'
+import userDetailStore from './userDetail'
 import thunk from 'redux-thunk'
 
 const appReducer = combineReducers({
     stateStore,
-    dataStore,
+    usersStore,
+    userDetailStore,
 });
 
 export default createStore(appReducer, applyMiddleware(thunk))

@@ -13,19 +13,22 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onClickClear: () => {
+        onClickClear: (router) => {
             dispatch(changeSearch(''));
             dispatch(getUsers(1));
+            router.push(`/`);
         },
-        onChangeSearch: (e) => {
+        onChangeSearch: (e, router) => {
             const value = e.target.value;
             dispatch(changeSearch(value));
             clearTimeout(timeout);
             timeout = setTimeout(() => {
                 if (value == '') {
                     dispatch(getUsers(1));
+                    router.push(`/`);
                 } else {
                     dispatch(searchUsers(value, dispatch));
+                    router.push(`/search/${value}`);
                 }
             }, 600);
         },

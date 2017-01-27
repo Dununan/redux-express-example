@@ -11,7 +11,7 @@ class PageList extends React.Component {
     }
 
     componentDidMount() {
-        this.props.init();
+        this.props.init(this.props.params.search ?  this.props.params.search : null );
     }
 
     handleMore() {
@@ -36,7 +36,7 @@ class PageList extends React.Component {
 
         return (
             <div className="center-align container margin-top margin-bottom">
-                <Search />
+                <Search router={this.props.router} />
                 {list}
                 {loadMore}
             </div>

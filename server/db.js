@@ -51,6 +51,23 @@ const DatabaseHelper = {
             visible: visibleCount > db.users.length? db.users.length : visibleCount,
             data,
         };
+    },
+
+    getOne: (id) => {
+        let data = {};
+
+        try {
+            data = _(db.users)
+                .orderBy('id', 'desc')
+                .filter((o) => (o.id == id))
+                .take(1)
+                .value();
+        } catch (e) {
+            console.log(e);
+            return false;
+        }
+
+        return data[0];
     }
 };
 

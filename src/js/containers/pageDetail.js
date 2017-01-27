@@ -1,20 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PageDetail from '../components/PageDetail.jsx'
-import {goToMainPage} from '../actions'
+import {getUserDetail} from '../actions'
 
-
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        user: state.stateStore.pageArgs.item,
+        user: state.userDetailStore,
+        userId: ownProps.params.id,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onBack: () => {
-            dispatch(goToMainPage());
-        }
+        init: (id) => {
+            dispatch(getUserDetail(id));
+        },
     }
 };
 
