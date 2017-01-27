@@ -6,7 +6,7 @@ This is a simple example how you can write modern javascript ES6 application.
 Application contains two pages. 
 First is Customers List with implementation "Load More" button and Search bar.
 Second is Customer Detail.
-Front-end of this App is in ReactJS with Redux state managment and custom router. 
+Front-end of this App is in ReactJS with Redux state managment and React router. 
 Design is in Material Design pattern by Materialize framework. 
 For communicate with API app use fetch.
 
@@ -21,6 +21,7 @@ File db.json is used as simple database with underscore-db lib.
  - [ReactJS](https://facebook.github.io/react/)
  - [Redux](https://github.com/reactjs/redux)
  - [Redux Thunk](https://github.com/gaearon/redux-thunk)
+ - [React Router](https://react-router.now.sh/)
  - [Materialize](http://materializecss.com/about.html)
  - [Webpack 2](https://webpack.js.org/)
  - [Express](http://expressjs.com/)
