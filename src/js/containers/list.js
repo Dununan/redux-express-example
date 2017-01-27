@@ -5,7 +5,7 @@ import ListTemplate from '../components/List.jsx'
 
 const mapStateToProps = (state) => {
     return {
-        usersList: state.dataStore,
+        usersList: state.usersStore,
     }
 };
 

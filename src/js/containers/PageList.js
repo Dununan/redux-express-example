@@ -1,21 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PageList from '../components/PageList.jsx'
-import {getUsers, setListPage} from '../actions'
+import {getUsers, setListPage, changeSearch, searchUsers} from '../actions'
 
 
 const mapStateToProps = (state) => {
     return {
-        count: state.dataStore.count,
-        visible: state.dataStore.visible,
+        count: state.usersStore.count,
+        visible: state.usersStore.visible,
         page: state.stateStore.listPage,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        init: () => {
-            dispatch(getUsers(1))
+        init: (search) => {
+            if (search === null) {
+                dispatch(getUsers(1));
+            } else {
+                dispatch(changeSearch(search));
+                dispatch(searchUsers(search, dispatch));
+            }
         },
         loadMore: (page) => {
             dispatch(setListPage(page));

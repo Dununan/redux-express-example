@@ -34,19 +34,11 @@ export const getUsers = (page) => {
     }
 };
 
-export const goToDetailPage = (item) => {
-  return {
-      type: C.CHANGE_PAGE,
-      page: C.PAGE_DETAIL,
-      args: {item},
-  }
-};
-
-export const goToMainPage = () => {
-    return {
-        type: C.CHANGE_PAGE,
-        page: C.PAGE_MAIN,
-        args: {},
+export const getUserDetail = (id) => {
+    return dispatch => {
+        fetch(`/api/detail/${id}`)
+            .then(response => response.json())
+            .then(json => dispatch(setUserDetail(json)))
     }
 };
 
@@ -68,5 +60,12 @@ function addToUsersList(list) {
 function emptyUsersList() {
     return {
         type: C.EMPTY_USERS_LIST,
+    }
+}
+
+function setUserDetail(data) {
+    return {
+        type: C.SET_USER_DETAIL,
+        data,
     }
 }

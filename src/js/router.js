@@ -1,32 +1,19 @@
 import React from 'react'
-import C from './constants'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import PageList from './containers/PageList'
 import PageDetail from './containers/PageDetail'
+import App from './components/App.jsx'
 
-const SimpleRouter = (page) => {
-    let title = 'Welcome';
-    let content = null;
-    switch (page) {
-        case C.PAGE_MAIN:
-            title = 'Costumers List';
-            content = <PageList />;
-            history.pushState(null,title, '/');
-            break;
-        case C.PAGE_DETAIL:
-            title = 'Costumers Detail';
-            content = <PageDetail />;
-            history.pushState(null,title, '/detail/');
-            break;
-        default:
-            title = 'Error - Page Not Found';
-            content = <div>404</div>;
-    }
 
-    return {
-        title,
-        content,
-    }
-};
+const RouterHandler = () => (
+    <Router history={browserHistory}>
+        <Route path="/" component={App} >
+            <IndexRoute component={PageList} title="Customers List" />
+            <Route path="search/:search" component={PageList} title="Customers List" />
+            <Route path="detail/:id" component={PageDetail} title="Customer Detail"/>
+        </Route>
+    </Router>
+);
 
-export default SimpleRouter
+export default RouterHandler;
