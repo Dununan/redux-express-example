@@ -1,8 +1,9 @@
+const path = require('path');
 const _   = require('lodash');
 const _db = require('underscore-db');
 
 _.mixin(_db);
-const db = _.load('./db.json');
+const db = _.load(path.join(__dirname + '/db.json'));
 const PER_PAGE = 24;
 
 const DatabaseHelper = {
